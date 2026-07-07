@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개인정보처리방침 — GAKIN OTP</title>
+<style>
+  :root {
+    --ink: #1F262C;
+    --muted: #5C666D;
+    --accent: #8B7239;
+    --line: #E4E0D6;
+    --bg: #FBFAF7;
+    --card: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.75;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 56px 24px 100px; }
+  .eyebrow {
+    font-size: 12.5px; letter-spacing: 0.1em; color: var(--accent);
+    text-transform: uppercase; font-weight: 600; margin-bottom: 10px;
+  }
+  h1 { font-size: 26px; font-weight: 700; margin: 0 0 6px; }
+  .updated { font-size: 13px; color: var(--muted); margin-bottom: 40px; }
+  h2 {
+    font-size: 18px; font-weight: 700; margin: 40px 0 12px;
+    padding-top: 16px; border-top: 1px solid var(--line);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  p { font-size: 14.5px; color: #333; margin: 0 0 12px; }
+  ul { margin: 0 0 12px; padding-left: 20px; }
+  li { font-size: 14.5px; color: #333; margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13.5px; }
+  th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; vertical-align: top; }
+  th { background: #F3F1EA; font-weight: 600; width: 30%; }
+  .placeholder {
+    background: #FFF6E6; color: #8A5A00; padding: 1px 5px; border-radius: 4px;
+    font-family: ui-monospace, monospace; font-size: 13px;
+  }
+  .callout {
+    background: #F3F1EA; border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
+    padding: 12px 16px; font-size: 13.5px; color: #4A4438; margin: 16px 0;
+  }
+  footer { margin-top: 60px; font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Privacy Policy</div>
+  <h1>GAKIN OTP 개인정보처리방침</h1>
+  <p class="updated">시행일자: <span class="placeholder">2026-XX-XX</span> · 최종 수정일: <span class="placeholder">2026-XX-XX</span></p>
+
+  <p><span class="placeholder">[개발자명 또는 회사명]</span>(이하 "회사")은 「개인정보 보호법」 등 관련 법령을 준수하며,
+  GAKIN OTP 애플리케이션(이하 "서비스") 이용자의 개인정보를 안전하게 보호하기 위해 다음과 같이 개인정보처리방침을 수립·공개합니다.</p>
+
+  <div class="callout">
+    본 서비스는 OTP(일회용 비밀번호) Secret Key를 서버에 평문으로 저장하지 않는 "제로 지식" 구조로 설계되었습니다.
+    클라우드 백업 시에도 이용자가 직접 설정한 백업 비밀번호로 기기에서 암호화한 데이터만 전송·저장합니다.
+  </div>
+
+  <h2>1. 수집하는 개인정보 항목 및 수집 방법</h2>
+  <table>
+    <tr><th>구분</th><th>수집 항목</th><th>수집 방법</th></tr>
+    <tr><td>회원가입/로그인</td><td>이메일 주소, 비밀번호(암호화 저장)</td><td>이용자 직접 입력</td></tr>
+    <tr><td>클라우드 백업(선택)</td><td>암호화된 OTP 계정 백업 데이터(암호문), 백업 버전 정보</td><td>이용자가 백업 기능 사용 시 자동 생성</td></tr>
+    <tr><td>기기 관리</td><td>기기 이름, 플랫폼(Android/iOS), 최초/최근 동기화 시각</td><td>앱 사용 중 자동 수집</td></tr>
+    <tr><td>보안 로그</td><td>접속 IP 주소, 기기 정보(User-Agent), 접속 일시, 수행 작업 종류</td><td>서비스 이용 중 자동 수집</td></tr>
+    <tr><td>기업용 계정(선택)</td><td>소속 조직명, 조직 내 역할</td><td>조직 관리자가 초대 시 입력</td></tr>
+  </table>
+  <p>※ OTP 코드 생성에 사용되는 Secret Key(비밀키)는 이용자의 기기 내부(Keystore/Secure Enclave)에만 저장되며,
+  회사의 서버로 전송되거나 서버에 저장되지 않습니다.</p>
+
+  <h2>2. 개인정보의 수집 및 이용 목적</h2>
+  <ul>
+    <li>회원 식별 및 본인 확인, 서비스 부정 이용 방지</li>
+    <li>클라우드 백업/복원 기능 제공 (기기 분실·교체 시 계정 복구)</li>
+    <li>기기 관리 및 원격 로그아웃 기능 제공</li>
+    <li>보안 사고 대응 및 침해 시도 탐지를 위한 접속 기록 관리</li>
+    <li>기업/조직 고객을 위한 임직원 계정 관리 및 감사(Audit) 기능 제공</li>
+  </ul>
+
+  <h2>3. 개인정보의 보유 및 이용 기간</h2>
+  <p>이용자가 회원 탈퇴를 요청하는 즉시 개인정보를 지체 없이 파기합니다. 다만 관계 법령에 따라 보존이 필요한 경우
+  해당 법령에서 정한 기간 동안 별도로 분리 보관합니다.</p>
+  <ul>
+    <li>보안 접속 로그: 수집일로부터 <span class="placeholder">[예: 6개월]</span> 보관 후 파기</li>
+    <li>백업 데이터: 회원 탈퇴 또는 백업 삭제 요청 시 즉시 파기</li>
+  </ul>
+
+  <h2>4. 개인정보의 제3자 제공 및 처리위탁</h2>
+  <p>회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만 서비스 제공을 위해 아래와 같이 처리를 위탁하고 있습니다.</p>
+  <table>
+    <tr><th>수탁업체</th><th>위탁업무 내용</th></tr>
+    <tr><td>Cloudflare, Inc.</td><td>서버 인프라(Workers) 및 데이터베이스(D1) 호스팅</td></tr>
+  </table>
+
+  <h2>5. 이용자의 권리와 행사 방법</h2>
+  <p>이용자는 언제든지 아래 권리를 행사할 수 있습니다.</p>
+  <ul>
+    <li>개인정보 열람, 정정·삭제 요청</li>
+    <li>처리 정지 요청 및 회원 탈퇴(계정 삭제)</li>
+    <li>클라우드 백업 데이터 삭제 요청</li>
+  </ul>
+  <p>권리 행사는 앱 내 설정 메뉴 또는 하단 연락처를 통해 요청하실 수 있으며, 회사는 관계 법령에 따라 지체 없이 조치합니다.</p>
+
+  <h2>6. 개인정보의 안전성 확보 조치</h2>
+  <ul>
+    <li>비밀번호는 PBKDF2 알고리즘으로 해시 처리하여 저장 (평문 저장 금지)</li>
+    <li>클라우드 백업 데이터는 이용자 기기에서 AES-256-GCM으로 암호화 후 전송 (제로 지식 구조)</li>
+    <li>전송 구간 전체 HTTPS(TLS) 암호화 적용</li>
+    <li>OTP Secret Key는 서버에 도달하지 않으며 기기 보안 저장소에만 보관</li>
+  </ul>
+
+  <h2>7. 아동의 개인정보 보호</h2>
+  <p>본 서비스는 만 14세 미만 아동을 대상으로 하지 않으며, 아동의 개인정보를 고의로 수집하지 않습니다.</p>
+
+  <h2>8. 개인정보 보호책임자</h2>
+  <table>
+    <tr><th>성명</th><td><span class="placeholder">[담당자명]</span></td></tr>
+    <tr><th>이메일</th><td><span class="placeholder">[연락 가능한 이메일 주소]</span></td></tr>
+  </table>
+
+  <h2>9. 고지의 의무</h2>
+  <p>본 방침은 법령·정책 변경에 따라 개정될 수 있으며, 변경 시 앱 내 공지 또는 본 페이지를 통해 사전 고지합니다.</p>
+
+  <footer>
+    이 문서는 일반적인 개인정보처리방침 양식을 기반으로 작성된 초안이며, 실제 서비스 운영 전 개인정보보호 법률 전문가의 검토를 받으시길 권장합니다.
+  </footer>
+</div>
+</body>
+</html>
