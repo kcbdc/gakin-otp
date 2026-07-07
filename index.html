@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAKIN OTP — 웹 데모</title>
+<style>
+  :root {
+    --bg: #14181C;
+    --panel: #1B2127;
+    --card: #1F262C;
+    --ink: #EDE8DE;
+    --muted: #93A0A8;
+    --faint: #5C666D;
+    --brass: #C9A24B;
+    --steel: #5C93B0;
+    --line: #2A323A;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #0B0D0F;
+    background-image: radial-gradient(circle at 20% 10%, rgba(201,162,75,0.08), transparent 40%),
+                       radial-gradient(circle at 85% 80%, rgba(92,147,176,0.07), transparent 45%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .wrap { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+  .badge {
+    font-family: ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--steel);
+    text-transform: uppercase;
+  }
+  .phone {
+    width: 320px;
+    background: #101215;
+    border-radius: 44px;
+    padding: 12px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  }
+  .screen {
+    background: var(--bg);
+    border-radius: 32px;
+    overflow: hidden;
+    padding: 22px 18px 26px;
+    min-height: 480px;
+  }
+  .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .brand { font-size: 16px; font-weight: 700; color: var(--ink); letter-spacing: 0.01em; }
+  .gear { width: 20px; height: 20px; color: var(--muted); }
+  .card {
+    background: var(--panel);
+    border-radius: 16px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .card .row { display: flex; justify-content: space-between; align-items: center; }
+  .issuer { font-size: 12px; font-weight: 600; color: var(--brass); }
+  .seconds { font-size: 11px; color: var(--faint); font-family: ui-monospace, monospace; }
+  .label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .code { font-size: 26px; font-weight: 700; letter-spacing: 3px; color: var(--ink); margin-top: 6px; }
+  .track { height: 4px; background: var(--line); border-radius: 2px; margin-top: 10px; overflow: hidden; }
+  .fill { height: 100%; background: var(--steel); transition: width 1s linear; }
+  details { margin-top: 8px; }
+  summary {
+    cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: center;
+    gap: 6px; padding: 12px; border-radius: 14px; background: var(--panel); color: var(--brass);
+    font-size: 13px; font-weight: 600;
+  }
+  summary::-webkit-details-marker { display: none; }
+  .addbox { margin-top: 10px; padding: 14px; background: var(--panel); border-radius: 14px; display: flex; flex-direction: column; gap: 8px; }
+  input {
+    background: var(--bg); border: 1px solid var(--line); color: var(--ink);
+    border-radius: 8px; padding: 10px 12px; font-size: 13px; outline: none;
+  }
+  input::placeholder { color: var(--faint); }
+  button {
+    background: var(--brass); color: var(--bg); border: none; border-radius: 8px;
+    padding: 10px; font-size: 13px; font-weight: 700; cursor: pointer;
+  }
+  .note { max-width: 320px; text-align: center; font-size: 12.5px; color: #8A93A0; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="badge">GAKIN OTP · WEB DEMO</div>
+  <div class="phone">
+    <div class="screen">
+      <div class="topbar">
+        <span class="brand">GAKIN OTP</span>
+        <svg class="gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+      </div>
+
+      <div id="acc-list"></div>
+
+      <details>
+        <summary>+ 계정 추가</summary>
+        <div class="addbox">
+          <input id="in-label" placeholder="계정 (예: alice@example.com)">
+          <input id="in-secret" placeholder="Secret Key (Base32)">
+          <button id="btn-add">추가</button>
+        </div>
+      </details>
+    </div>
+  </div>
+  <p class="note">브라우저 안에서만 동작하는 데모입니다. 서버 연동 없이, 실제 RFC 6238 TOTP 알고리즘으로 코드를 계산합니다. 새로고침하면 초기화됩니다.</p>
+</div>
+
+<script>
+function rotl(n,s){return (n<<s)|(n>>>(32-s));}
+function sha1(msg){
+  var ml=msg.length;
+  var wb=new Uint8Array((ml+9+63)&~63);
+  wb.set(msg); wb[ml]=0x80;
+  var dv=new DataView(wb.buffer);
+  dv.setUint32(wb.length-4,(ml*8)>>>0,false);
+  var h0=0x67452301,h1=0xefcdab89,h2=0x98badcfe,h3=0x10325476,h4=0xc3d2e1f0;
+  var w=new Int32Array(80);
+  for(var cs=0;cs<wb.length;cs+=64){
+    for(var i=0;i<16;i++) w[i]=dv.getInt32(cs+i*4,false);
+    for(i=16;i<80;i++) w[i]=rotl(w[i-3]^w[i-8]^w[i-14]^w[i-16],1);
+    var a=h0,b=h1,c=h2,d=h3,e=h4;
+    for(i=0;i<80;i++){
+      var f,k;
+      if(i<20){f=(b&c)|(~b&d);k=0x5a827999;}
+      else if(i<40){f=b^c^d;k=0x6ed9eba1;}
+      else if(i<60){f=(b&c)|(b&d)|(c&d);k=0x8f1bbcdc;}
+      else{f=b^c^d;k=0xca62c1d6;}
+      var t=(rotl(a,5)+f+e+k+w[i])|0;
+      e=d;d=c;c=rotl(b,30);b=a;a=t;
+    }
+    h0=(h0+a)|0;h1=(h1+b)|0;h2=(h2+c)|0;h3=(h3+d)|0;h4=(h4+e)|0;
+  }
+  var out=new Uint8Array(20);
+  var ov=new DataView(out.buffer);
+  ov.setUint32(0,h0>>>0,false);ov.setUint32(4,h1>>>0,false);ov.setUint32(8,h2>>>0,false);ov.setUint32(12,h3>>>0,false);ov.setUint32(16,h4>>>0,false);
+  return out;
+}
+function hmacSha1(key,msg){
+  var B=64,k=key;
+  if(k.length>B) k=sha1(k);
+  if(k.length<B){var p=new Uint8Array(B);p.set(k);k=p;}
+  var ip=new Uint8Array(B),op=new Uint8Array(B);
+  for(var i=0;i<B;i++){ip[i]=k[i]^0x36;op[i]=k[i]^0x5c;}
+  var inner=new Uint8Array(ip.length+msg.length);inner.set(ip);inner.set(msg,ip.length);
+  var ih=sha1(inner);
+  var outer=new Uint8Array(op.length+ih.length);outer.set(op);outer.set(ih,op.length);
+  return sha1(outer);
+}
+function b32decode(s){
+  var A="ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+  var c=s.toUpperCase().replace(/=+$/,"").replace(/\s/g,"");
+  var bits="";
+  for(var i=0;i<c.length;i++){var idx=A.indexOf(c[i]); if(idx===-1) continue; bits+=idx.toString(2).padStart(5,"0");}
+  var bytes=new Uint8Array(Math.floor(bits.length/8));
+  for(i=0;i<bytes.length;i++) bytes[i]=parseInt(bits.slice(i*8,i*8+8),2);
+  return bytes;
+}
+function counterBytes(n){var b=new ArrayBuffer(8);new DataView(b).setUint32(4,n,false);return new Uint8Array(b);}
+function totp(secretB32,period){
+  period=period||30;
+  var counter=Math.floor(Date.now()/1000/period);
+  var key=b32decode(secretB32);
+  var h=hmacSha1(key,counterBytes(counter));
+  var off=h[h.length-1]&0x0f;
+  var bin=((h[off]&0x7f)<<24)|((h[off+1]&0xff)<<16)|((h[off+2]&0xff)<<8)|(h[off+3]&0xff);
+  var code=(bin%1000000).toString().padStart(6,"0");
+  var remain=period-(Math.floor(Date.now()/1000)%period);
+  return {code:code,remain:remain};
+}
+
+var accounts=[
+  {issuer:"GitHub",label:"dev@gakin.kr",secret:"JBSWY3DPEHPK3PXP"},
+  {issuer:"Naver",label:"gakin.user",secret:"KRSXG5CTMVRXEZLU"}
+];
+
+function render(){
+  var list=document.getElementById("acc-list");
+  list.innerHTML="";
+  accounts.forEach(function(acc){
+    var r=totp(acc.secret,30);
+    var pct=Math.max(0,r.remain/30*100);
+    var card=document.createElement("div");
+    card.className="card";
+    card.innerHTML=
+      '<div class="row"><span class="issuer">'+acc.issuer+'</span><span class="seconds">'+r.remain+'s</span></div>'+
+      '<div class="label">'+acc.label+'</div>'+
+      '<div class="code">'+r.code.slice(0,3)+' '+r.code.slice(3)+'</div>'+
+      '<div class="track"><div class="fill" style="width:'+pct+'%"></div></div>';
+    list.appendChild(card);
+  });
+}
+render();
+setInterval(render,1000);
+
+document.getElementById("btn-add").addEventListener("click",function(){
+  var label=document.getElementById("in-label").value.trim();
+  var secret=document.getElementById("in-secret").value.trim();
+  if(!label||!secret) return;
+  accounts.push({issuer:"내 계정",label:label,secret:secret});
+  document.getElementById("in-label").value="";
+  document.getElementById("in-secret").value="";
+  render();
+});
+</script>
+</body>
+</html>
