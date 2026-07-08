@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<title>개인정보처리방침 | KOIN PAY</title>
+<style>
+  :root {
+    --bg: #0b1130;
+    --surface: #131a3a;
+    --ink: #eef0fb;
+    --muted: #8891bd;
+    --border: rgba(255, 255, 255, 0.12);
+    --cyan: #29e7cd;
+    --pink: #ff3d81;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 120px; }
+  .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+  .brand span { font-weight: 800; font-size: 18px; letter-spacing: 0.02em; }
+  h1 { font-size: 26px; font-weight: 800; margin: 0 0 6px; }
+  .updated { color: var(--muted); font-size: 14px; margin-bottom: 40px; }
+  .notice {
+    background: rgba(255, 61, 129, 0.1);
+    border: 1px solid rgba(255, 61, 129, 0.35);
+    border-radius: 14px;
+    padding: 18px 20px;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 40px;
+  }
+  .notice b { color: var(--pink); }
+  h2 {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 44px 0 14px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  p, li { font-size: 15px; color: var(--ink); }
+  .muted { color: var(--muted); }
+  ul, ol { padding-left: 20px; margin: 10px 0; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  th, td { text-align: left; padding: 12px 14px; border: 1px solid var(--border); vertical-align: top; }
+  th { background: var(--surface); color: var(--muted); font-weight: 700; width: 30%; }
+  .fill { color: var(--cyan); font-weight: 600; }
+  footer { margin-top: 60px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="brand">
+    <svg width="30" height="30" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="p" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#ff3d81"/><stop offset="100%" stop-color="#ff7bac"/></linearGradient>
+        <linearGradient id="t" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1fd1c9"/><stop offset="100%" stop-color="#4be3b0"/></linearGradient>
+        <radialGradient id="d" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffe08a"/><stop offset="100%" stop-color="#ffab2e"/></radialGradient>
+      </defs>
+      <circle cx="46" cy="60" r="27" fill="none" stroke="url(#p)" stroke-width="11"/>
+      <circle cx="74" cy="60" r="27" fill="none" stroke="url(#t)" stroke-width="11"/>
+      <circle cx="60" cy="52" r="6.2" fill="url(#d)"/>
+    </svg>
+    <span>KOIN PAY</span>
+  </div>
+
+  <h1>개인정보처리방침</h1>
+  <div class="updated">시행일자: <span class="fill">2026년 7월 9일</span></div>
+
+  <div class="notice">
+    <b>안내:</b> 이 문서는 KOIN PAY 서비스에 맞춘 개인정보처리방침 초안입니다.
+    <span class="fill">[운영자/회사명]</span>, <span class="fill">[대표자]</span>,
+    <span class="fill">[사업자등록번호]</span>, <span class="fill">[주소]</span>,
+    <span class="fill">[연락처/이메일]</span> 등 노란색으로 표시된 항목은
+    실제 서비스 운영 정보로 반드시 교체한 뒤 게시해주세요. 법적 검토가
+    필요한 경우 개인정보보호 전문 변호사 또는 법무팀 확인을 권장합니다.
+  </div>
+
+  <p><span class="fill">[운영자/회사명]</span>(이하 "회사")은 「개인정보 보호법」 등
+  관련 법령을 준수하며, 이용자의 개인정보를 안전하게 처리하기 위해
+  다음과 같이 개인정보처리방침을 수립·공개합니다.</p>
+
+  <h2>1. 수집하는 개인정보 항목</h2>
+  <p>회사는 회원가입, 지갑 서비스 제공, 결제·송금·충전·환전 처리를 위해
+  다음의 개인정보를 수집합니다.</p>
+  <table>
+    <tr><th>구분</th><td>수집 항목</td></tr>
+    <tr><th>회원가입 · 로그인</th><td>휴대전화번호, 간편 비밀번호(PIN, 해시 처리 후 저장)</td></tr>
+    <tr><th>지갑 · 거래</th><td>지갑주소, 거래내역(충전·결제·송금·환전 금액 및 일시, 거래 상대방 지갑주소), 잔액</td></tr>
+    <tr><th>은행 계좌 연동</th><td>은행 코드, 계좌 정보(토큰화되어 저장되며 전체 계좌번호는 서버에 평문으로 저장되지 않음)</td></tr>
+    <tr><th>푸시 알림</th><td>기기 푸시 토큰(Firebase Cloud Messaging), 알림 발송/수신 로그</td></tr>
+    <tr><th>자동 수집 정보</th><td>접속 로그, 기기 정보, 서비스 이용기록, IP 주소</td></tr>
+  </table>
+
+  <h2>2. 개인정보의 수집 및 이용 목적</h2>
+  <ul>
+    <li>회원 식별 및 본인 확인, 부정 이용 방지</li>
+    <li>지갑 충전, QR 결제, 송금, 환전 등 핵심 서비스 제공</li>
+    <li>거래내역 조회 및 분쟁·오류 발생 시 확인·처리</li>
+    <li>입금, 결제, 송금 수신 등 상태 변화에 대한 푸시 알림 발송</li>
+    <li>서비스 개선, 이상거래 탐지 및 보안 강화</li>
+    <li>관계 법령에 따른 기록 보존 및 분쟁 해결</li>
+  </ul>
+
+  <h2>3. 개인정보의 보유 및 이용 기간</h2>
+  <p>회사는 원칙적으로 개인정보의 수집·이용 목적이 달성되면 지체 없이
+  파기합니다. 다만 관계 법령에 따라 보존이 필요한 경우 아래와 같이
+  일정 기간 보관합니다.</p>
+  <table>
+    <tr><th>보유 항목</th><td>보유 기간</td></tr>
+    <tr><th>계약 또는 청약철회 등에 관한 기록</th><td><span class="fill">5년</span> (전자상거래법)</td></tr>
+    <tr><th>대금결제 및 재화 등의 공급에 관한 기록</th><td><span class="fill">5년</span> (전자상거래법)</td></tr>
+    <tr><th>소비자 불만 또는 분쟁처리에 관한 기록</th><td><span class="fill">3년</span> (전자상거래법)</td></tr>
+    <tr><th>접속 로그, IP 등 서비스 이용기록</th><td><span class="fill">3개월</span> (통신비밀보호법)</td></tr>
+    <tr><th>회원 탈퇴 시 계정 정보</th><td>탈퇴 즉시 파기 (단, 관계 법령에 따른 보존 의무가 있는 정보는 예외)</td></tr>
+  </table>
+
+  <h2>4. 개인정보의 제3자 제공</h2>
+  <p>회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다.
+  다만 다음의 경우는 예외로 합니다.</p>
+  <ul>
+    <li>이용자가 사전에 별도로 동의한 경우</li>
+    <li>법령의 규정에 의거하거나, 수사기관이 법령에서 정한 절차와
+      방법에 따라 요구한 경우</li>
+  </ul>
+
+  <h2>5. 개인정보 처리업무의 위탁</h2>
+  <p>회사는 서비스 제공을 위해 아래와 같이 개인정보 처리 업무를
+  외부에 위탁하고 있습니다.</p>
+  <table>
+    <tr><th>수탁업체</th><td>위탁 업무 내용</td></tr>
+    <tr><th>Google (Firebase Cloud Messaging)</th><td>모바일 앱 푸시 알림 발송</td></tr>
+    <tr><th><span class="fill">[호스팅/인프라 사업자]</span></th><td>웹 서비스 호스팅 및 서버 인프라 운영</td></tr>
+    <tr><th><span class="fill">[제휴 은행/PG사 등]</span></th><td>은행 계좌 연동, 입출금 처리</td></tr>
+  </table>
+  <p class="muted">실제 사용 중인 인프라·제휴사에 맞춰 위 표를 채워주세요.</p>
+
+  <h2>6. 이용자의 권리와 행사 방법</h2>
+  <ul>
+    <li>이용자는 언제든지 자신의 개인정보를 조회하거나 수정할 수 있으며,
+      회원 탈퇴를 통해 수집·이용에 대한 동의를 철회할 수 있습니다.</li>
+    <li>개인정보 열람, 정정, 삭제, 처리정지 요청은 앱 내 설정 메뉴 또는
+      아래 문의처를 통해 접수할 수 있습니다.</li>
+    <li>회사는 관계 법령에 특별한 규정이 없는 한 지체 없이 조치합니다.</li>
+  </ul>
+
+  <h2>7. 개인정보의 안전성 확보 조치</h2>
+  <ul>
+    <li>비밀번호(PIN) 및 전화번호는 복호화가 불가능한 해시(hash) 형태로 저장</li>
+    <li>은행 계좌 정보는 토큰화하여 저장하며, 전체 계좌번호는 마스킹 처리</li>
+    <li>모든 통신 구간에 HTTPS(TLS) 암호화 적용</li>
+    <li>거래 원장은 해시체인 방식으로 관리되어 위변조 여부 검증 가능</li>
+    <li>관리자 페이지 접근 권한 분리 및 접속 기록 관리</li>
+  </ul>
+
+  <h2>8. 푸시 알림 및 기기 정보</h2>
+  <p>안드로이드 앱은 입금, 결제, 송금 수신 등 지갑 상태 변화를 알리기
+  위해 Firebase Cloud Messaging(FCM) 기기 토큰을 수집합니다. 이 토큰은
+  알림 발송 목적으로만 사용되며, 앱 삭제 또는 알림 권한 해제 시 더 이상
+  유효하지 않게 됩니다. 알림 수신은 기기 설정에서 언제든 끌 수 있습니다.</p>
+
+  <h2>9. 만 14세 미만 아동의 개인정보</h2>
+  <p>본 서비스는 만 14세 미만 아동을 대상으로 하지 않으며, 만 14세 미만
+  아동의 회원가입을 원칙적으로 제한합니다.</p>
+
+  <h2>10. 개인정보 보호책임자</h2>
+  <table>
+    <tr><th>성명</th><td class="fill">[성명]</td></tr>
+    <tr><th>직책</th><td class="fill">[직책]</td></tr>
+    <tr><th>연락처</th><td class="fill">[이메일 / 전화번호]</td></tr>
+  </table>
+  <p>이용자는 서비스 이용 중 발생한 모든 개인정보 관련 문의, 불만처리,
+  피해구제 등을 위 개인정보 보호책임자에게 문의할 수 있습니다.</p>
+
+  <h2>11. 개인정보처리방침의 변경</h2>
+  <p>이 개인정보처리방침은 법령, 정책 또는 서비스 변경에 따라 내용이
+  추가·삭제 및 수정될 수 있으며, 변경 시 앱 공지사항 또는 본 페이지를
+  통해 사전에 고지합니다.</p>
+
+  <footer>
+    본 페이지는 <span class="fill">https://[배포 도메인]/privacy/</span> 에서
+    운영됩니다. 시행일자: 2026년 7월 9일
+  </footer>
+
+</div>
+</body>
+</html>
